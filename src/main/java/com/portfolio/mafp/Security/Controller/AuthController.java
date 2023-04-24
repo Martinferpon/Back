@@ -31,7 +31,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://frontendmafp.web.app")
 @RequestMapping ("/auth")
 
 
@@ -48,7 +48,7 @@ public class AuthController {
     RolService rolService;
     @Autowired
     JwtProvider jwtProvider;
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://frontendmafp.web.app")
     @PostMapping ("/nuevo")
     public ResponseEntity<?> nuevo(@Valid @RequestBody NuevoUsuario nuevoUsuario, BindingResult bindingResult){
         if (bindingResult.hasErrors())
@@ -68,7 +68,7 @@ public class AuthController {
        return new ResponseEntity (new Mensaje("Usuario guardado"),HttpStatus.CREATED) ;     
      
 }
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://frontendmafp.web.app")
     @PostMapping("/login")
     public ResponseEntity<JwtDto> login (@Valid @RequestBody LoginUsuario loginUsuario, BindingResult bindingResult){
         if(bindingResult.hasErrors())
